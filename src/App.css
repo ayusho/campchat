@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  display: flex;
+}
+.chat {
+  flex: 1;
+}
+.background {
+  background-color: black;
+}
+
+.editor {
+  flex: 2
 }
 
 .App-logo {
