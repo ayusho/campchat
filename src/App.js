@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Chat from './components/Chat';
 import Editor from './components/Editor';
+import Editor2 from './components/Editor.v2';
 import '@progress/kendo-theme-default/dist/all.css';
 
 function App() {

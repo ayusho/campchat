@@ -1,47 +1,142 @@
 .App {
   text-align: left;
   display: flex;
+  color: #fff;
+  font-size: large;
 }
 .chat {
   flex: 1;
 }
 .background {
   background-color: black;
+  
 }
 
-.editor {
-  flex: 2
+.editor1 {
+  flex: 1;
+  resize: both;
+  height: 1200px;
+  width: 600px;
 }
 
 .btn {
   position: fixed;
   font-size: large;
   display: inline;
-  left: 45rem;
+  right: 32rem;
   background: none;
   border-radius: 4px;
-  padding: 0 12px!important;
-  line-height: 22px!important;
+  padding: 0 12px !important;
+  line-height: 22px !important;
   font-size: 14px;
   margin: 7px 20px;
   cursor: pointer;
   border: 1px solid #e4e4e4;
   color: #e4e4e4;
   height: 30px;
+  /* float: right; */
 }
 
 .btn:hover {
-  background-color: grey; 
+  background-color: grey;
 }
 
 .btn:active {
   /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
 }
 
+.outer {
+  /* display: flex;
+  float: left; */
+  /* position: relative; */
+  display: flex;
+  position: inherit;
+  overflow: auto;
+  font: 12px / normal "Monaco", "Menlo", "Ubuntu Mono", "Consolas",
+    "source-code-pro", monospace;
+  direction: ltr;
+  text-align: left;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* word-wrap: break-word; */
+  width: 100%;
+  height: calc(100% - 80px);
+  background-color: rgb(20, 20, 20);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.outer .react-monaco-editor-container {
+  flex: 1;
+}
+
+.background .k-chat {
+  height: 100%;
+  width: 90%;
+  /* position: absolute; */
+  top: 10%;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #1f1f1f;
+  border-radius: 10px 10px;
+  padding: 5px 10px;
+  overflow: auto;
+  -webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+}
+
+.background .k-chat .k-bubble {
+  background: #404040;
+  margin-left: 15px;
+  padding: 10px 15px;
+  border-color: #404040;
+  border-radius: 8px;
+  color: #cdcdcd;
+  float: left;
+  word-wrap: break-word;
+  /* max-width: calc(100% - 80px); */
+}
+
+.background .k-chat .k-message-box {
+  border: 0;
+  background: #1f1f1f;
+  color: #cdcdcd;
+  /* width: 100%; */
+  /* height: 100%; */
+  padding: 10px;
+  resize: none;
+  border-radius: 8px;
+  padding-top: 30px;
+  position: relative;
+}
 
 
+.background .k-chat .k-message-box:after {
+  /* padding: 20px; */
+  border-radius: 10px 10px;
+  background: #404040;
+}
 
 
+.background .k-chat .k-alt .k-bubble {
+  border-color: #404040;
+  color: #fff;
+  background-color: #404040;
+  /* box-shadow: 0 1px 2px rgba(255,99,88,0.2); */
+}
 
+.outer .react-monaco-editor-container .monaco-editor {
+  /* width: 1200px; */
+  /* overflow: auto; */
+}
 
+.background {
+  /* flex: 1; */
+  background: #141414;
+  border-left: 1px solid hsla(0, 0%, 100%, 0.1);
+  padding: 50px;
+  /* position: relative; */
+}
 

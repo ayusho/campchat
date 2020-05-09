@@ -45,24 +45,40 @@ class Editor extends React.Component {
     const { code, defaultValue } = this.state;
     const options = {
       selectOnLineNumbers: true,
+      minimap: {
+        enabled: false,
+      },
+      selectOnLineNumbers: true,
+      wordWrap: "bounded",
+      wrappingStrategy: "advanced",
+      contextMenu: true,
+      copyWithSyntaxHighlighting: true,
+      fontSize: 15,
+      formatOnType: true,
+      colorDecorators: true,
     };
     return (
-      <>
+      <div className="outer">
         <MonacoEditor
-          width="1200"
+          width="200"
           height="600"
           language="typescript"
           theme="vs-dark"
-          defaultValue="//type your code here"
+          // defaultValue="//type your code here"
           value={code}
           options={options}
           onChange={this.onChange}
           editorDidMount={this.editorDidMount}
+          className="editor1"
         />
         <button className="btn" onClick={this.onApplyChanges}>
-          Apply changes
+          <img
+            alt="play icon"
+            src="https://ai.campk12.com/static/media/refresh.b98fb345.svg"
+          />
+          <span> Apply Changes </span>
         </button>
-      </>
+      </div>
     );
   }
 }
