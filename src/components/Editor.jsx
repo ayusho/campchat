@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { render } from "react-dom";
 import MonacoEditor from "react-monaco-editor";
 
@@ -15,10 +15,12 @@ class Editor extends React.Component {
 
       (async function respond (inputText) {
         var language = 'French';
-        var transalatedOutPut = await axios.get('https://reqres.in/api/users/2');
+        var transalatedOutPut= await axios.get('https://reqres.in/api/users/2');
         
         return  "Oh in french that is " + transalatedOutPut.data.data.email;
     })`,
+      width: window.innerWidth - 501,
+      height: window.innerHeight - 50,
     };
   }
   editorDidMount = (editor, monaco) => {
@@ -33,6 +35,20 @@ class Editor extends React.Component {
     });
     // localStorage.setItem("code", newValue);
   };
+  updateDimensions = () => {
+    this.setState({
+      width: window.innerWidth - 501,
+      height: window.innerHeight - 50,
+    });
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
   onSubmit = (editor, monaco) => {
     const model = editor.getModel();
     const value = model.getValue();
@@ -59,9 +75,16 @@ class Editor extends React.Component {
     };
     return (
       <div className="outer">
+        <button className="btn" onClick={this.onApplyChanges}>
+          <img
+            alt="play icon"
+            src="https://ai.campk12.com/static/media/refresh.b98fb345.svg"
+          />
+          <span> Apply Changes </span>
+        </button>
         <MonacoEditor
-          width="200"
-          height="600"
+          width={this.state.width}
+          height={this.state.height}
           language="typescript"
           theme="vs-dark"
           // defaultValue="//type your code here"
@@ -71,13 +94,6 @@ class Editor extends React.Component {
           editorDidMount={this.editorDidMount}
           className="editor1"
         />
-        <button className="btn" onClick={this.onApplyChanges}>
-          <img
-            alt="play icon"
-            src="https://ai.campk12.com/static/media/refresh.b98fb345.svg"
-          />
-          <span> Apply Changes </span>
-        </button>
       </div>
     );
   }

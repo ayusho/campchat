@@ -1,55 +1,16 @@
 .App {
   text-align: left;
-  display: flex;
+  /* display: flex; */
   color: #fff;
   font-size: large;
-}
-.chat {
-  flex: 1;
-}
-.background {
-  background-color: black;
-  
-}
-
-.editor1 {
-  flex: 1;
-  resize: both;
-  height: 1200px;
-  width: 600px;
-}
-
-.btn {
-  position: fixed;
-  font-size: large;
-  display: inline;
-  right: 32rem;
-  background: none;
-  border-radius: 4px;
-  padding: 0 12px !important;
-  line-height: 22px !important;
-  font-size: 14px;
-  margin: 7px 20px;
-  cursor: pointer;
-  border: 1px solid #e4e4e4;
-  color: #e4e4e4;
-  height: 30px;
-  /* float: right; */
-}
-
-.btn:hover {
-  background-color: grey;
-}
-
-.btn:active {
-  /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
 }
 
 .outer {
   /* display: flex;
   float: left; */
   /* position: relative; */
-  display: flex;
+  z-index: 2;
+  /* display: flex; */
   position: inherit;
   overflow: auto;
   font: 12px / normal "Monaco", "Menlo", "Ubuntu Mono", "Consolas",
@@ -60,31 +21,60 @@
   /* word-wrap: break-word; */
   width: 100%;
   height: calc(100% - 80px);
-  background-color: rgb(20, 20, 20);
+  background-color: #1f1f1f;
   line-height: 1.5;
   font-size: 14px;
 }
 
-.outer .react-monaco-editor-container {
-  flex: 1;
+.container {
+  display: flex;
 }
 
+.outer {
+  /* display: flex; */
+  /* position: relative; */
+  /* flex: 1 1; */
+}
+
+.outer .react-monaco-editor-container {
+  /* flex: 1; */
+  margin: 0 auto;
+}
+
+
+.outer .react-monaco-editor-container .monaco-editor {
+  /* width: 1200px; */
+  /* overflow: auto; */
+  /* overflow: auto; */
+  margin: 0 auto;
+
+}
+
+.background {
+  /* flex: 1; */
+  background: #141414;
+  border-left: 1px solid hsla(0, 0%, 100%, 0.1);
+  padding: 50px;
+  /* position: relative; */
+}
+
+
 .background .k-chat {
-  height: 100%;
+  height: -webkit-fill-available;
   width: 90%;
   /* position: absolute; */
-  top: 10%;
+  /* top: 10%;
   top: 10%;
   left: 0;
-  right: 0;
+  right: 0; */
   margin: auto;
   background: #1f1f1f;
   border-radius: 10px 10px;
   padding: 5px 10px;
-  overflow: auto;
+  /* overflow: auto; */
   -webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
+  /* max-width: 800px; */
 }
 
 .background .k-chat .k-bubble {
@@ -127,16 +117,31 @@
   /* box-shadow: 0 1px 2px rgba(255,99,88,0.2); */
 }
 
-.outer .react-monaco-editor-container .monaco-editor {
-  /* width: 1200px; */
-  /* overflow: auto; */
+.btn {
+  position: inherit;
+  margin: 7px 20px 7px auto;
+  display: block;
+  z-index: 2;
+  font-size: large;
+  display: absolute;
+  right: 32rem;
+  background: none;
+  border-radius: 4px;
+  padding: 0 12px !important;
+  line-height: 22px !important;
+  font-size: 14px;
+  /* margin: 7px 20px; */
+  cursor: pointer;
+  border: 1px solid #e4e4e4;
+  color: #e4e4e4;
+  height: 30px;
+  /* float: right; */
 }
 
-.background {
-  /* flex: 1; */
-  background: #141414;
-  border-left: 1px solid hsla(0, 0%, 100%, 0.1);
-  padding: 50px;
-  /* position: relative; */
+.btn:hover {
+  background-color: grey;
 }
 
+.btn:active {
+  /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+}
